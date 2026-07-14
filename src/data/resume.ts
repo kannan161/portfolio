@@ -41,19 +41,19 @@ export interface PersonalDetails {
 
 export const personalInfo = {
   name: 'Kannan S',
-  title: 'Solution Engineer',
+  title: 'Senior Frontend Engineer',
   phone: '+91 9916674585',
   email: 'kannan.skannan111@gmail.com',
   location: 'Bangalore, Karnataka',
   linkedin: 'https://linkedin.com',
   summary:
-    'Solution Engineer with 4+ years of experience delivering scalable, high-performance web applications using React.js, Next.js, and TypeScript across iGaming, AI, and AR domains. Improved Lighthouse scores by 35%+, reduced page load times by 40%, and improved organic search visibility by fixing critical indexing issues via Google Search Console. Recognised technical leader — screened 25+ candidates, trained a batch of 10 freshers, and established front-end standards adopted across teams. Seeking to bring deep front-end expertise and a product-first mindset to a high-growth engineering team.',
+    'Senior Frontend Engineer with 5+ years of experience delivering scalable, high-performance web applications using React.js, Next.js, and TypeScript across iGaming, AI, and AR domains. Improved Lighthouse scores by 35%+, reduced page load times by 40%, and improved organic search visibility by fixing critical indexing issues via Google Search Console. Recognised technical leader — screened 25+ candidates, trained a batch of 10 freshers, and established front-end standards adopted across teams. Seeking to bring deep front-end expertise and a product-first mindset to a high-growth engineering team.',
 };
 
 export const workExperience: WorkExperience[] = [
   {
     company: 'GammaStack',
-    role: 'Solution Engineer',
+    role: 'Senior Frontend Engineer',
     period: 'Nov 2024 – Present',
     location: 'Bangalore, India',
     domain: 'iGaming Platform',

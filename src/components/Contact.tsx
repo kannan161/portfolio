@@ -10,18 +10,38 @@ export default function Contact() {
   const [form, setForm] = useState({ name: '', email: '', message: '' });
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
+  const [error, setError] = useState<string | null>(null);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!form.name || !form.email || !form.message) return;
-    
+
     setIsSubmitting(true);
-    // Simulate API request
-    setTimeout(() => {
-      setIsSubmitting(false);
+    setError(null);
+
+    try {
+      const formData = new FormData();
+      formData.append('name', form.name);
+      formData.append('email', form.email);
+      formData.append('message', form.message);
+
+      const res = await fetch('/api/contact', {
+        method: 'POST',
+        body: formData,
+      });
+
+      if (!res.ok) {
+        const data = await res.json().catch(() => null);
+        throw new Error(data?.error || 'Failed to send message');
+      }
+
       setIsSubmitted(true);
       setForm({ name: '', email: '', message: '' });
-    }, 1200);
+    } catch (err) {
+      setError(err instanceof Error ? err.message : 'Failed to send message');
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -167,6 +187,12 @@ export default function Contact() {
                       />
                     </div>
 
+                    {error && (
+                      <p className="text-red-400 text-xs font-medium" role="alert">
+                        {error}
+                      </p>
+                    )}
+
                     <Magnetic>
                       <button
                         type="submit"
@@ -197,7 +223,10 @@ export default function Contact() {
                       </p>
                     </div>
                     <button
-                      onClick={() => setIsSubmitted(false)}
+                      onClick={() => {
+                        setIsSubmitted(false);
+                        setError(null);
+                      }}
                       className="clay-btn bg-white/5 border-white/10 hover:bg-white/10 px-6 py-2.5 text-xs font-bold text-white flex items-center gap-1.5"
                     >
                       Send another message

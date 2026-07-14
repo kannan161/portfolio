@@ -2,8 +2,9 @@
 
 import { useState, useEffect } from 'react';
 import { motion, useScroll, useSpring } from 'framer-motion';
-import { Menu, X, Terminal, Printer } from 'lucide-react';
+import { Menu, X, Terminal, Download } from 'lucide-react';
 import { personalInfo } from '@/data/resume';
+import { downloadCV } from '@/lib/downloadCV';
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -48,10 +49,6 @@ export default function Navbar() {
     handleScroll();
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
-
-  const handlePrint = () => {
-    window.print();
-  };
 
   return (
     <header className="sticky top-0 z-40 w-full glass-nav backdrop-blur-md print:hidden">
@@ -101,24 +98,23 @@ export default function Navbar() {
               </a>
             ))}
             
-            {/* Quick print resume */}
             <button
-              onClick={handlePrint}
+              onClick={downloadCV}
               className="ml-4 clay-btn px-4 py-2 text-xs font-semibold text-white flex items-center gap-2 hover:bg-white/5 active:clay-btn-active"
             >
-              <Printer size={12} />
-              Print CV
+              <Download size={12} />
+              Download CV
             </button>
           </nav>
 
           {/* Mobile Menu Button */}
           <div className="md:hidden flex items-center space-x-2">
             <button
-              onClick={handlePrint}
+              onClick={downloadCV}
               className="clay-btn p-2 text-white hover:bg-white/5 active:clay-btn-active"
-              title="Print Resume"
+              title="Download CV"
             >
-              <Printer size={16} />
+              <Download size={16} />
             </button>
             <button
               onClick={() => setIsOpen(!isOpen)}

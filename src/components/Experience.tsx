@@ -114,7 +114,7 @@ export default function Experience() {
         </div>
 
         {/* Timeline body */}
-        <div ref={containerRef} className="relative max-w-5xl mx-auto timeline-track">
+        <div ref={containerRef} className="relative max-w-5xl mx-auto">
           {/* Center Scroll-tracked Glowing Line */}
           <div className="absolute left-[10px] md:left-1/2 top-0 bottom-0 w-1 bg-slate-800/60 -translate-x-[2px] rounded-full overflow-hidden">
             <motion.div

@@ -16,8 +16,8 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: 'Kannan S | Solution Engineer',
-  description: 'Solution Engineer with 4+ years of experience delivering scalable, high-performance web applications using React.js, Next.js, and TypeScript across iGaming, AI, and AR domains.',
+  title: 'Kannan S | Senior Frontend Engineer',
+  description: 'Senior Frontend Engineer with 5+ years of experience delivering scalable, high-performance web applications using React.js, Next.js, and TypeScript across iGaming, AI, and AR domains.',
   metadataBase: new URL('https://kannans.dev'),
 };
 

@@ -15,11 +15,11 @@ import ParticleBackground from '@/components/ParticleBackground';
 import LoadingScreen from '@/components/LoadingScreen';
 
 export const metadata: Metadata = {
-  title: 'Kannan S | Solution Engineer - High-Performance Web Applications',
-  description: 'Solution Engineer with 4+ years of experience delivering scalable, high-performance web applications using React.js, Next.js, and TypeScript across iGaming, AI, and AR domains. Screened 25+ candidates, trained a batch of 10 freshers, and established front-end standards.',
+  title: 'Kannan S | Senior Frontend Engineer - High-Performance Web Applications',
+  description: 'Senior Frontend Engineer with 5+ years of experience delivering scalable, high-performance web applications using React.js, Next.js, and TypeScript across iGaming, AI, and AR domains. Screened 25+ candidates, trained a batch of 10 freshers, and established front-end standards.',
   keywords: [
     'Kannan S',
-    'Solution Engineer',
+    'Senior Frontend Engineer',
     'React.js',
     'Next.js',
     'TypeScript',
@@ -36,8 +36,8 @@ export const metadata: Metadata = {
   authors: [{ name: 'Kannan S' }],
   creator: 'Kannan S',
   openGraph: {
-    title: 'Kannan S | Solution Engineer',
-    description: 'Solution Engineer with 4+ years of experience delivering scalable, high-performance web applications using React.js, Next.js, and TypeScript across iGaming, AI, and AR domains.',
+    title: 'Kannan S | Senior Frontend Engineer',
+    description: 'Senior Frontend Engineer with 5+ years of experience delivering scalable, high-performance web applications using React.js, Next.js, and TypeScript across iGaming, AI, and AR domains.',
     url: 'https://kannans.dev',
     siteName: 'Kannan S Portfolio',
     locale: 'en_US',
@@ -45,8 +45,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Kannan S | Solution Engineer',
-    description: 'Solution Engineer with 4+ years of experience delivering scalable, high-performance web applications using React.js, Next.js, and TypeScript.',
+    title: 'Kannan S | Senior Frontend Engineer',
+    description: 'Senior Frontend Engineer with 5+ years of experience delivering scalable, high-performance web applications using React.js, Next.js, and TypeScript.',
   },
 };
 

@@ -3,17 +3,14 @@
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { personalInfo, workExperience, keyProjects, technicalSkills, awards, education, personalDetails } from '@/data/resume';
-import { Download, FileText, Briefcase, GraduationCap, Info, Printer, Sparkles } from 'lucide-react';
+import { Download, FileText, Briefcase, GraduationCap, Info, Sparkles } from 'lucide-react';
 import Magnetic from './Magnetic';
+import { downloadCV } from '@/lib/downloadCV';
 
 type Tab = 'experience' | 'skills' | 'education' | 'personal';
 
 export default function Resume() {
   const [activeTab, setActiveTab] = useState<Tab>('experience');
-
-  const handlePrint = () => {
-    window.print();
-  };
 
   return (
     <>
@@ -49,15 +46,15 @@ export default function Resume() {
             <div className="flex flex-col sm:flex-row justify-between items-center gap-4 mb-8 bg-white/[0.02] border border-white/5 p-4 rounded-2xl shadow-clay">
               <div className="flex items-center gap-3 text-slate-300">
                 <FileText size={20} className="text-accent-cyan" />
-                <span className="text-sm font-semibold">Standard Print-Ready Resume</span>
+                <span className="text-sm font-semibold">Downloadable Resume</span>
               </div>
               <Magnetic>
                 <button
-                  onClick={handlePrint}
+                  onClick={downloadCV}
                   className="clay-btn bg-gradient-to-r from-accent-violet to-accent-cyan px-6 py-2.5 text-xs font-bold text-white flex items-center gap-2 hover:opacity-90 transition-opacity"
                 >
-                  <Printer size={14} />
-                  Print / Save as PDF
+                  <Download size={14} />
+                  Download CV
                 </button>
               </Magnetic>
             </div>
@@ -213,7 +210,7 @@ export default function Resume() {
         {/* Header */}
         <div className="text-center border-b-2 border-gray-300 pb-4 mb-4">
           <h1 className="text-3xl font-extrabold tracking-tight uppercase mb-1">{personalInfo.name}</h1>
-          <p className="text-sm font-semibold text-gray-600 mb-2">{personalInfo.title} | 4+ Years of Experience</p>
+          <p className="text-sm font-semibold text-gray-600 mb-2">{personalInfo.title} | 5+ Years of Experience</p>
           <div className="flex justify-center flex-wrap gap-4 text-xs text-gray-500">
             <span>Phone: {personalInfo.phone}</span>
             <span>Email: {personalInfo.email}</span>

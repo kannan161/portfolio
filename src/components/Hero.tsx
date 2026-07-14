@@ -5,6 +5,7 @@ import dynamic from 'next/dynamic';
 import { personalInfo } from '@/data/resume';
 import { ArrowRight, Download, Eye, Sparkles } from 'lucide-react';
 import Magnetic from './Magnetic';
+import { downloadCV } from '@/lib/downloadCV';
 
 const HeroScene = dynamic(() => import('./HeroScene'), {
   ssr: false,
@@ -16,10 +17,6 @@ const HeroScene = dynamic(() => import('./HeroScene'), {
 });
 
 export default function Hero() {
-  const handlePrint = () => {
-    window.print();
-  };
-
   return (
     <section id="hero" className="relative min-h-[90vh] md:min-h-screen flex items-center justify-center pt-24 pb-16 overflow-hidden print:hidden">
       {/* 3D Canvas Background */}
@@ -40,7 +37,7 @@ export default function Hero() {
           >
             <Sparkles size={14} className="text-accent-cyan animate-pulse" />
             <span className="text-xs sm:text-sm font-semibold bg-gradient-to-r from-accent-cyan to-accent-sky bg-clip-text text-transparent">
-              Solution Engineer · 4+ Years Experience
+              Senior Frontend Engineer · 5+ Years Experience
             </span>
           </motion.div>
 
@@ -112,7 +109,7 @@ export default function Hero() {
 
             <Magnetic>
               <button
-                onClick={handlePrint}
+                onClick={downloadCV}
                 className="clay-btn bg-white/5 border-white/10 hover:bg-white/10 px-8 py-4 text-sm font-bold text-white flex items-center gap-2 w-full sm:w-auto justify-center"
               >
                 <Download size={16} />
