@@ -1,27 +1,14 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
-
-html,
-body {
-  max-width: 100vw;
-  overflow-x: hidden;
-}
-
-body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  --background: #050816;
+  --foreground: #f8fafc;
+  --secondary: #0f172a;
+  --accent-violet: #7c3aed;
+  --accent-cyan: #06b6d4;
+  --accent-sky: #38bdf8;
 }
 
 * {
@@ -30,13 +17,173 @@ body {
   margin: 0;
 }
 
-a {
-  color: inherit;
-  text-decoration: none;
+html {
+  scroll-behavior: smooth;
+  color-scheme: dark;
 }
 
-@media (prefers-color-scheme: dark) {
-  html {
-    color-scheme: dark;
+body {
+  color: var(--foreground);
+  background-color: var(--background);
+  font-family: var(--font-outfit), var(--font-inter), system-ui, -apple-system, sans-serif;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Custom Webkit Scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #070a1e;
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, var(--accent-violet) 0%, var(--accent-cyan) 100%);
+  border-radius: 5px;
+  border: 2px solid #070a1e;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(180deg, var(--accent-cyan) 0%, var(--accent-sky) 100%);
+}
+
+/* Selection highlight */
+::selection {
+  background-color: rgba(124, 58, 237, 0.4);
+  color: #ffffff;
+}
+
+/* Claymorphism UI Class Utilities */
+.clay-card {
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.05) 0%, rgba(255, 255, 255, 0.01) 100%);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 
+    inset 2px 2px 5px rgba(255, 255, 255, 0.1),
+    inset -3px -3px 7px rgba(0, 0, 0, 0.5),
+    0 10px 30px -10px rgba(0, 0, 0, 0.6);
+  border-radius: 24px;
+}
+
+.clay-card-violet {
+  background: linear-gradient(135deg, rgba(124, 58, 237, 0.15) 0%, rgba(15, 23, 42, 0.8) 100%);
+  border: 1px solid rgba(124, 58, 237, 0.2);
+  box-shadow: 
+    inset 2px 2px 4px rgba(255, 255, 255, 0.15),
+    inset -3px -3px 6px rgba(0, 0, 0, 0.5),
+    0 10px 25px -5px rgba(124, 58, 237, 0.15);
+  border-radius: 24px;
+}
+
+.clay-card-cyan {
+  background: linear-gradient(135deg, rgba(6, 182, 212, 0.15) 0%, rgba(15, 23, 42, 0.8) 100%);
+  border: 1px solid rgba(6, 182, 212, 0.2);
+  box-shadow: 
+    inset 2px 2px 4px rgba(255, 255, 255, 0.15),
+    inset -3px -3px 6px rgba(0, 0, 0, 0.5),
+    0 10px 25px -5px rgba(6, 182, 212, 0.15);
+  border-radius: 24px;
+}
+
+.clay-card-sky {
+  background: linear-gradient(135deg, rgba(56, 189, 248, 0.15) 0%, rgba(15, 23, 42, 0.8) 100%);
+  border: 1px solid rgba(56, 189, 248, 0.2);
+  box-shadow: 
+    inset 2px 2px 4px rgba(255, 255, 255, 0.15),
+    inset -3px -3px 6px rgba(0, 0, 0, 0.5),
+    0 10px 25px -5px rgba(56, 189, 248, 0.15);
+  border-radius: 24px;
+}
+
+.clay-btn {
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0.05) 100%);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  box-shadow: 
+    inset 1px 1px 3px rgba(255, 255, 255, 0.2),
+    inset -2px -2px 4px rgba(0, 0, 0, 0.4),
+    0 4px 15px rgba(0, 0, 0, 0.3);
+  border-radius: 9999px;
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+.clay-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 
+    inset 2px 2px 5px rgba(255, 255, 255, 0.3),
+    inset -1px -1px 3px rgba(0, 0, 0, 0.2),
+    0 8px 25px rgba(0, 0, 0, 0.4);
+}
+
+.clay-btn-active {
+  box-shadow: 
+    inset -2px -2px 5px rgba(255, 255, 255, 0.3),
+    inset 3px 3px 6px rgba(0, 0, 0, 0.5);
+  transform: translateY(1px);
+}
+
+/* Glassmorphism Panel Utilities */
+.glass-panel {
+  background: rgba(15, 23, 42, 0.65);
+  backdrop-filter: blur(16px) saturate(180%);
+  -webkit-backdrop-filter: blur(16px) saturate(180%);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.glass-nav {
+  background: rgba(5, 8, 22, 0.7);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+/* Glowing Highlights & Blobs */
+.glow-blob {
+  filter: blur(120px);
+  opacity: 0.45;
+  mix-blend-mode: plus-lighter;
+  pointer-events: none;
+  position: absolute;
+}
+
+/* Timeline specific styles */
+.timeline-track::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  width: 4px;
+  background: linear-gradient(180deg, var(--accent-violet) 0%, var(--accent-cyan) 50%, var(--accent-sky) 100%);
+  transform: translateX(-50%);
+  box-shadow: 0 0 15px rgba(6, 182, 212, 0.5);
+}
+
+@media (max-width: 768px) {
+  .timeline-track::after {
+    left: 20px;
+    transform: none;
   }
+}
+
+/* Lenis Custom Smooth Scrolling Settings */
+html.lenis, html.lenis body {
+  height: auto;
+}
+
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+
+.lenis.lenis-smooth [data-lenis-prevent] {
+  overflow: clip;
+}
+
+.lenis.lenis-stopped {
+  overflow: hidden;
+}
+
+.lenis.lenis-smooth iframe {
+  pointer-events: none;
 }

@@ -1,95 +1,76 @@
-import Image from "next/image";
-import styles from "./page.module.css";
+import type { Metadata } from 'next';
+import Navbar from '@/components/Navbar';
+import Hero from '@/components/Hero';
+import About from '@/components/About';
+import Experience from '@/components/Experience';
+import Skills from '@/components/Skills';
+import Projects from '@/components/Projects';
+import Awards from '@/components/Awards';
+import Resume from '@/components/Resume';
+import Contact from '@/components/Contact';
+import Footer from '@/components/Footer';
+import CustomCursor from '@/components/CustomCursor';
+import SmoothScroll from '@/components/SmoothScroll';
+import ParticleBackground from '@/components/ParticleBackground';
+import LoadingScreen from '@/components/LoadingScreen';
 
-export default function Home() {
+export const metadata: Metadata = {
+  title: 'Kannan S | Solution Engineer - High-Performance Web Applications',
+  description: 'Solution Engineer with 4+ years of experience delivering scalable, high-performance web applications using React.js, Next.js, and TypeScript across iGaming, AI, and AR domains. Screened 25+ candidates, trained a batch of 10 freshers, and established front-end standards.',
+  keywords: [
+    'Kannan S',
+    'Solution Engineer',
+    'React.js',
+    'Next.js',
+    'TypeScript',
+    'iGaming',
+    'AI',
+    'AR',
+    'Performance Engineering',
+    'Lighthouse Optimization',
+    'Bangalore',
+    'Three.js',
+    'React Flow',
+    'Socket.IO'
+  ],
+  authors: [{ name: 'Kannan S' }],
+  creator: 'Kannan S',
+  openGraph: {
+    title: 'Kannan S | Solution Engineer',
+    description: 'Solution Engineer with 4+ years of experience delivering scalable, high-performance web applications using React.js, Next.js, and TypeScript across iGaming, AI, and AR domains.',
+    url: 'https://kannans.dev',
+    siteName: 'Kannan S Portfolio',
+    locale: 'en_US',
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Kannan S | Solution Engineer',
+    description: 'Solution Engineer with 4+ years of experience delivering scalable, high-performance web applications using React.js, Next.js, and TypeScript.',
+  },
+};
+
+export default function Page() {
   return (
-    <div className={styles.page}>
-      <main className={styles.main}>
-        <Image
-          className={styles.logo}
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol>
-          <li>
-            Get started by editing <code>src/app/page.tsx</code>.
-          </li>
-          <li>Save and see your changes instantly.</li>
-        </ol>
-
-        <div className={styles.ctas}>
-          <a
-            className={styles.primary}
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className={styles.logo}
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-            className={styles.secondary}
-          >
-            Read our docs
-          </a>
-        </div>
-      </main>
-      <footer className={styles.footer}>
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
-    </div>
+    <SmoothScroll>
+      <LoadingScreen />
+      <CustomCursor />
+      <ParticleBackground />
+      
+      <div className="relative min-h-screen bg-[#050816] text-[#f8fafc]">
+        <Navbar />
+        <main>
+          <Hero />
+          <About />
+          <Experience />
+          <Skills />
+          <Projects />
+          <Awards />
+          <Resume />
+          <Contact />
+        </main>
+        <Footer />
+      </div>
+    </SmoothScroll>
   );
 }
