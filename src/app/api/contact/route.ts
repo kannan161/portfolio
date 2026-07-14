@@ -18,7 +18,7 @@ export async function POST(request: Request) {
 
     await resend.emails.send({
       from: 'Portfolio Contact <contact@yourdomain.com>',
-      to: process.env.MY_EMAIL,
+      to: process.env.MY_EMAIL ?? '',
       subject: `New contact from ${name}`,
       text: `Name: ${name}\nEmail: ${email}\nMessage:\n${message}`,
     });
