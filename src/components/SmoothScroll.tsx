@@ -27,7 +27,7 @@ export default function SmoothScroll({ children }: { children: React.ReactNode }
       const target = e.target as HTMLElement;
       const anchor = target.closest('a');
       if (anchor && anchor.hash && anchor.origin === window.location.origin) {
-        const element = document.querySelector(anchor.hash);
+        const element = document.querySelector(anchor.hash) as HTMLElement | null;
         if (element) {
           e.preventDefault();
           lenis.scrollTo(element, { offset: -80 });
